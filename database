@@ -1,0 +1,213 @@
+CREATE DATABASE University;
+USE University;
+CREATE TABLE Student(
+student_id int NOT NULL,
+full_name varchar(100) NOT NULL,
+gender varchar(40) NOT NULL,
+international_student bool NOT NULL,
+PRIMARY KEY (student_id)
+);
+
+CREATE TABLE FullAddress (
+student_id int NOT NULL,
+address varchar(40) NOT NULL,
+city varchar(40) NOT NULL,
+province varchar(40) NOT NULL,
+country varchar(40) NOT NULL,
+PRIMARY KEY (student_id)
+);
+
+CREATE TABLE ContactInformation (
+student_id int NOT NULL,
+emergency_contact varchar(50) NOT NULL,
+student_phone varchar(50) NOT NULL,
+student_email varchar(100) NOT NULL,
+PRIMARY KEY (student_id)
+);
+
+CREATE TABLE AcademicInformation (
+student_id int NOT NULL,
+gpa float NOT NULL,
+degree varchar(40) NOT NULL,
+major varchar(40) NOT NULL,
+minor varchar(40),
+admission_year date NOT NULL,
+PRIMARY KEY (student_id)
+);
+
+CREATE TABLE Course (
+student_id int NOT NULL,
+course_code varchar(40) NOT NULL,
+course_name varchar(100) NOT NULL,
+midterm_1 float,
+midterm_2 float,
+project_presentation float,
+project_report float,
+final_exam float NOT NULL,
+final_grade float NOT NULL,
+course_completion_status varchar(40) NOT NULL,
+PRIMARY KEY (student_id)
+);
+
+CREATE TABLE CourseInformation (
+course_code varchar(40) NOT NULL,
+course_name varchar(100) NOT NULL,
+instructor_name varchar(100) NOT NULL,
+PRIMARY KEY (course_code)
+);
+
+INSERT INTO Student (student_id, full_name, gender,
+international_student)
+VALUES (534794149, 'Lawson Clay', 'male', 0);
+
+INSERT INTO FullAddress (student_id, address, city, province, country)
+VALUES (534794149, '2078 7th Ave', 'Waterloo', 'Ontario', 'Canada');
+
+INSERT INTO ContactInformation (student_id, emergency_contact,
+student_phone, student_email)
+VALUES (534794149, '4167839923', '2309384493',
+'lawsonc99@gmail.com');
+
+INSERT INTO AcademicInformation (student_id, gpa, degree, major,
+minor, admission_year)
+VALUES (534794149, 3.2, 'bachelor', 'communications', 'geography',
+'2021-09-01');
+
+INSERT INTO Course (student_id, course_code, course_name,
+midterm_1, midterm_2, project_presentation, project_report,
+final_exam, final_grade, course_completion_status)
+VALUES (534794149, 'GG231', 'Risk and Disasters', 71, 89.2, 70, 68, 88,
+79.93, 'pass');
+
+INSERT INTO Student (student_id, full_name, gender,
+international_student)
+VALUES (780691550, 'Jane Stafford', 'female', 1);
+
+INSERT INTO FullAddress (student_id, address, city, province, country)
+VALUES (780691550, '1033 Tally Rd', 'Toronto', 'Ontario', 'Canada');
+
+INSERT INTO ContactInformation (student_id, emergency_contact,
+student_phone, student_email)
+VALUES (780691550, '2897763309', '4109908829',
+'staffordj2003@hotmail.com');
+
+INSERT INTO AcademicInformation (student_id, gpa, degree, major,
+admission_year)
+VALUES (780691550, 3.8, 'master', 'biology', '2022-09-01');
+
+INSERT INTO Course (student_id, course_code, course_name,
+midterm_1, midterm_2, project_presentation, project_report, 
+final_exam, final_grade, course_completion_status)
+VALUES (780691550, 'BI236', 'Cell Biology', 76, 84, 75, 63.5, 81, 77.17,
+'pass');
+
+INSERT INTO Student (student_id, full_name, gender,
+international_student)
+VALUES (967719468, 'Lukas Jensen', 'male', 0);
+
+INSERT INTO FullAddress (student_id, address, city, province, country)
+VALUES (967719468, '4308 11th Ave', 'Burlington', 'Ontario', 'Canada');
+
+INSERT INTO ContactInformation (student_id, emergency_contact,
+student_phone, student_email)
+VALUES (967719468, '2893827492', '412943432',
+'jensen22@hotmail.com');
+
+INSERT INTO AcademicInformation (student_id, gpa, degree, major,
+admission_year)
+VALUES (967719468, 2.1, 'bachelor', 'geology', '2021-09-01');
+
+INSERT INTO Course (student_id, course_code, course_name,
+midterm_1, midterm_2, project_presentation, project_report,
+final_exam, final_grade, course_completion_status)
+VALUES (967719468, 'GE101', 'Introduction to Geology', 70.5, 34, 0, 63,
+30, 37.13, 'fail');
+
+INSERT INTO Student (student_id, full_name, gender,
+international_student)
+VALUES (946002608, 'Tessa Roberson', 'female', 1);
+
+INSERT INTO FullAddress (student_id, address, city, province, country)
+VALUES (946002608, '4170 Heritage Drive', 'Waterloo', 'Ontario',
+'Canada');
+
+INSERT INTO ContactInformation (student_id, emergency_contact,
+student_phone, student_email)
+VALUES (946002608, '4150039827', '2897659937',
+'tessa.r@outlook.com');
+
+INSERT INTO AcademicInformation (student_id, gpa, degree, major,
+admission_year)
+VALUES (946002608, 2.1, 'bachelor', 'geography', '2021-09-01');
+
+INSERT INTO Course (student_id, course_code, course_name,
+midterm_1, midterm_2, project_presentation, project_report,
+final_exam, final_grade, course_completion_status)
+VALUES (946002608, 'GE101', 'Introduction to Geology', 46.2, 63.7, 44,
+51, 41.7, 47.41, 'fail');
+
+INSERT INTO Student (student_id, full_name, gender,
+international_student)
+VALUES (878689717, 'Rebekah George', 'female', 0);
+
+INSERT INTO FullAddress (student_id, address, city, province, country)
+VALUES (878689717, '771 Barrydowne Road', 'London', 'Ontario',
+'Canada');
+
+INSERT INTO ContactInformation (student_id, emergency_contact,
+student_phone, student_email)
+VALUES (967719468, '4167294754', '9947823777',
+'rebekahg123@outlook.com');
+
+INSERT INTO AcademicInformation (student_id, gpa, degree, major,
+admission_year)
+VALUES (878689717, 3.1, 'master', 'geography', '2023-09-01');
+
+INSERT INTO Course (student_id, course_code, course_name,
+midterm_1, midterm_2, project_presentation, project_report,
+final_exam, final_grade, course_completion_status)
+VALUES (878689717, 'GG620', 'Foundations in Human Geography', 79,
+88.32, 73.2, 76, 89, 83.08, 'pass');
+
+INSERT INTO Student (student_id, full_name, gender,
+international_student)
+VALUES (124061138, 'Tilly Duran', 'female', 1);
+
+INSERT INTO FullAddress (student_id, address, city, province, country)
+VALUES (124061138, '1979 Queen Elisabeth Blvd', 'Waterloo', 'Ontario',
+'Canada');
+
+INSERT INTO ContactInformation (student_id, emergency_contact,
+student_phone, student_email)
+VALUES (124061138, '5198873654', '2893984409',
+'tillyduran@gmail.com');
+
+INSERT INTO AcademicInformation (student_id, gpa, degree, major,
+admission_year)
+VALUES (124061138, 3.4, 'doctor', 'chemistry', '2023-09-01');
+
+INSERT INTO Course (student_id, course_code, course_name,
+midterm_1, midterm_2, project_presentation, project_report,
+final_exam, final_grade, course_completion_status)
+VALUES (124061138, 'BH821', 'Research Seminar', 72, 81, 93.53, 91, 88,
+85.83, 'pass');
+
+INSERT INTO CourseInformation (course_code, course_name,
+instructor_name)
+VALUES ('GG231', 'Risk and Disasters', 'Dillan Terrell');
+
+INSERT INTO CourseInformation (course_code, course_name,
+instructor_name)
+VALUES ('BI236', 'Cell Biology', 'Kasey Strong');
+
+INSERT INTO CourseInformation (course_code, course_name,
+instructor_name)
+VALUES ('GE101', 'Introduction to Geology', 'Milan Navarro');
+
+INSERT INTO CourseInformation (course_code, course_name,
+instructor_name)
+VALUES ('BH821', 'Research Seminar', 'Meghan Floon');
+INSERT INTO CourseInformation (course_code, course_name,
+instructor_name)
+VALUES ('GG620', 'Foundations in Human Geography', 'Emmanuel
+Haas');
